@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  # The Python ML Prediction Service
+  prediction-service:
+    build: ./Phase 3 - System Backbone - Backend & API Development (Node.js)/prediction_service
+    container_name: prediction_service_container
+
+  # The Node.js API Gateway that talks to the frontend
+  api-gateway:
+    build: ./Phase 3 - System Backbone - Backend & API Development (Node.js)/api_gateway
+    container_name: api_gateway_container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - prediction-service
