@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Risk Assessment Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Credit Risk Assessment Portal</h1>
+        </header>
+
+        <main>
+            <form id="risk-form">
+                <fieldset>
+                    <legend>Personal & Financial Details</legend>
+                    <div class="form-grid">
+                        <label for="monthly_income_rs">Monthly Income (RS):</label>
+                        <input type="number" id="monthly_income_rs" value="55000" required>
+                        
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" value="34" required>
+                        
+                        <label for="gender">Gender:</label>
+                        <select id="gender">
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select>
+                        
+                        <label for="income_stability_type">Income Stability:</label>
+                        <select id="income_stability_type">
+                            <option value="Variable">Variable</option>
+                            <option value="Stable">Stable</option>
+                            <option value="Highly Variable">Highly Variable</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Behavioral & Derived Metrics</legend>
+                    <div class="form-grid">
+                        <label for="debt_burden_ratio">Debt Burden Ratio:</label>
+                        <input type="number" step="0.01" id="debt_burden_ratio" placeholder="e.g., 0.42" value="0.42" required>
+                        
+                        <label for="income_consistency_score">Income Consistency Score:</label>
+                        <input type="number" step="0.01" id="income_consistency_score" placeholder="e.g., 0.73" value="0.73" required>
+                        
+                        <label for="loan_repayment_consistency">Loan Repayment Consistency:</label>
+                        <input type="number" step="0.01" id="loan_repayment_consistency" placeholder="e.g., 0.66" value="0.66">
+                        
+                        <label for="bnpl_repayment_consistency">BNPL Repayment Consistency:</label>
+                        <input type="number" step="0.01" id="bnpl_repayment_consistency" placeholder="e.g., 0.66" value="0.66">
+                        
+                        <label for="financial_coping_ability">Financial Coping Ability:</label>
+                        <input type="number" id="financial_coping_ability" placeholder="Scale 1-5" value="4">
+                        
+                        <label for="clickstream_volatility">Clickstream Volatility:</label>
+                        <input type="number" step="0.01" id="clickstream_volatility" placeholder="e.g., 0.24" value="0.24">
+                        
+                        <label for="app_diversity">App Diversity:</label>
+                        <input type="number" id="app_diversity" placeholder="e.g., 13" value="13">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Economic & External Factors</legend>
+                    <div class="form-grid">
+                        <label for="peer_default_exposure">Peer Default Exposure:</label>
+                        <input type="number" step="0.01" id="peer_default_exposure" placeholder="e.g., 0.30" value="0.30">
+                        
+                        <label for="urbanization_score">Urbanization Score:</label>
+                        <input type="number" step="0.01" id="urbanization_score" placeholder="e.g., 0.98" value="0.98">
+                        
+                        <label for="local_unemployment_rate">Local Unemployment Rate:</label>
+                        <input type="number" step="0.01" id="local_unemployment_rate" placeholder="e.g., 0.03" value="0.03">
+                    </div>
+                </fieldset>
+
+                <button type="submit">Check Risk Score</button>
+            </form>
+
+            <h2>Prediction Result</h2>
+            <pre id="results">Submit the form to see the prediction result.</pre>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
