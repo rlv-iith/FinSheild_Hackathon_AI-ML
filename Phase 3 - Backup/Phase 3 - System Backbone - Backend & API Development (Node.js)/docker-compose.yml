@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # API Gateway (Node.js)
+  api_gateway:
+    build: ./api_gateway
+    ports:
+      - "8080:8080"
+    container_name: api_gateway_service
+    depends_on:
+      ml_service:
+        # This condition tells the api_gateway to wait for the ml_service to pass its healthcheck.
+        condition: service_healthy
+
+  # Machine Learning Service (Python/Flask)
+  ml_service:
+    build: ./ml_service
+    container_name: ml_service
+    # This section defines the healthcheck. Docker will run this command to see if the service is ready.
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5    
