@@ -1,0 +1,37 @@
+# Python virtual environment
+fintech_hackathion/
+venv/
+*.env
+
+# Large data files
+*.csv
+*.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Output folders from Phase 2
+results_*/
+
+# Ignore the organic test set file
+organic_test_set.csv
+organic_test_set_v2.csv
+
+# Ignore all Excel files
+*.xlsx
+*.xls
+*.xlsm
+*.xlsb
+*.xltx
+*.xltm
+*.ods
+# Ignore all SQL files
+*.db
+# Ignore .csv files
+*.csv
